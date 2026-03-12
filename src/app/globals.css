@@ -1,26 +1,87 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Brand palette */
+  --brand-10: #E9DFF6;
+  --brand-20: #ECD9FF;
+  --brand-30: #D2A5FF;
+  --brand-40: #AA68FF;
+  --brand-50: #9436E1;
+  --brand-60: #820AD1;
+  --brand-70: #610F9B;
+  --brand-80: #490B75;
+  --brand-90: #320850;
+
+  /* Semantic tokens */
+  --background: #1a0430;
+  --foreground: #E9DFF6;
+  --accent: #AA68FF;
+  --accent-glow: rgba(170, 104, 255, 0.25);
+  --card-bg: rgba(73, 11, 117, 0.55);
+  --card-border: rgba(170, 104, 255, 0.2);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent: var(--accent);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: ui-monospace, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+html,
 body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), 'Rajdhani', sans-serif;
+}
+
+/* Leaflet overrides */
+.leaflet-container {
+  background: #1a0430 !important;
+}
+
+.leaflet-control-attribution {
+  background: rgba(50, 8, 80, 0.7) !important;
+  color: #610F9B !important;
+  font-size: 9px !important;
+}
+
+.leaflet-control-attribution a {
+  color: #AA68FF !important;
+}
+
+.leaflet-control-zoom a {
+  background: rgba(73, 11, 117, 0.8) !important;
+  color: #E9DFF6 !important;
+  border-color: rgba(170, 104, 255, 0.25) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: rgba(170, 104, 255, 0.25) !important;
+  color: #AA68FF !important;
+}
+
+/* Custom marker glow */
+.leaflet-marker-icon {
+  filter: drop-shadow(0 0 8px rgba(170, 104, 255, 0.7));
+}
+
+/* Font utility classes */
+.font-display {
+  font-family: var(--font-display), 'Orbitron', sans-serif;
+}
+
+.font-body {
+  font-family: var(--font-body), 'Rajdhani', sans-serif;
 }
