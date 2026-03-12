@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DesenTrack
 
-## Getting Started
+O **DesenTrack** é um aplicativo web de rastreamento GPS e telemetria. Ele utiliza mapas interativos para exibir localizações e possui um backend integrado para persistência de dados e autenticação.
 
-First, run the development server:
+## 🚀 Tecnologias e Stack
+
+- **Frontend:** [Next.js](https://nextjs.org/) (App Router), [React](https://reactjs.org/), [Tailwind CSS](https://tailwindcss.com/)
+- **Mapas:** [Leaflet](https://leafletjs.com/) e [React-Leaflet](https://react-leaflet.js.org/)
+- **Backend / Banco de Dados / Auth:** [Supabase](https://supabase.com/)
+- **Linguagem:** TypeScript
+
+---
+
+## 🛠️ Pré-requisitos
+
+Para rodar este projeto localmente, você precisará ter instalado em sua máquina:
+
+1. **[Node.js](https://nodejs.org/)** (Recomendado versão 20 ou superior)
+2. **Gerenciador de pacotes** (`npm`, `yarn`, `pnpm` ou `bun`)
+3. Uma conta e um projeto configurado no **[Supabase](https://supabase.com/)**.
+
+---
+
+## ⚙️ Configuração do Projeto
+
+1. Entre na pasta do projeto web:
+   ```bash
+   cd web-app
+   ```
+
+2. Instale as dependências executando um dos comandos abaixo:
+   ```bash
+   npm install
+   # ou
+   yarn install
+   # ou
+   pnpm install
+   # ou
+   bun install
+   ```
+
+3. Crie ou atualize o arquivo **`.env.local`** na raiz da pasta `web-app` com as credenciais do seu projeto Supabase:
+   ```env
+   NEXT_PUBLIC_SUPABASE_URL=https://sua-url-do-supabase.supabase.co
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=sua-anon-key-do-supabase
+   ```
+   > **Nota:** As credenciais atuais do seu projeto do Supabase podem ser encontradas no painel do Supabase, em **Project Settings > API**.
+
+---
+
+## 💻 Rodando Localmente
+
+Para iniciar o servidor de desenvolvimento local, execute:
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
+# ou
 pnpm dev
-# or
+# ou
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra o seu navegador e acesse [http://localhost:3000](http://localhost:3000) para ver a aplicação rodando. 🎉
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📝 Scripts Disponíveis
 
-## Learn More
+No diretório do projeto, você pode executar:
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `npm run dev`: Inicia o servidor de desenvolvimento.
+- `npm run build`: Cria a versão de produção otimizada da aplicação.
+- `npm run start`: Inicia o servidor de produção localmente (após rodar o build).
+- `npm run lint`: Executa a verificação de erros de código (ESLint).
