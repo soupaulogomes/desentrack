@@ -74,3 +74,21 @@ No diretório do projeto, você pode executar:
 - `npm run build`: Cria a versão de produção otimizada da aplicação.
 - `npm run start`: Inicia o servidor de produção localmente (após rodar o build).
 - `npm run lint`: Executa a verificação de erros de código (ESLint).
+
+---
+
+## ☁️ Deploy na Vercel
+
+A maneira mais simples e recomendada de colocar este projeto em produção é através da [Vercel](https://vercel.com) (criadora do Next.js).
+
+1. **Suba o projeto para o GitHub** (ou GitLab / Bitbucket).
+2. **Crie uma conta na Vercel** conectada ao seu GitHub.
+3. No painel da Vercel, clique em **Add New** > **Project** e importe o repositório do projeto.
+4. Na tela de importação, expanda a seção **Environment Variables** (Variáveis de Ambiente) e adicione as duas variáveis do seu arquivo `.env.local`:
+   - `NEXT_PUBLIC_SUPABASE_URL`
+   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+5. Clique no botão **Deploy**.
+
+Em poucos minutos, a Vercel vai instalar as dependências, gerar o *build* (versão de produção) e te entregar uma URL pública e segura para acessar a aplicação.
+
+Para mais detalhes sobre deploy no Next.js, [veja a documentação oficial](https://nextjs.org/docs/app/building-your-application/deploying).
